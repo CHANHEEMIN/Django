@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h1>UPDATE</h1>
+    </div>
+</div>
+<form method="POST" action=".">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ error }}
+    </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name" >
+    </div>
+    <div class="form-group">
+        <label for="birthday">Birth Day</label>
+        <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birth Day">
+    </div>
+    <button type="submit" class="btn btn-primary">UPDATE</button>
+</form>
+    <button type="submit" formmethod="GET" class="btn btn-primary" onclick="location.href = '/board_list'">BACK</button>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12">
+            <div class="form-group">
+                <label for=title>NAME</label>
+                <input type=text class="form-control" id="title" value="{{board.name}}" />
+                <label for=date>BIRTH DAY</label>
+                <textarea class = "form-control">{{board.birthday}}</textarea>      
+            </div>
+            <button type="submit" class="btn btn-primary" formmethod="GET" onclick="location.href = '/board_list'">BACK</button>
+            <button type="submit" class="btn btn-primary" formmethod="GET" onclick="location.href = '/board_update/{{ board.id }}'">UPDATE</button>
+            <button type="submit" class="btn btn-primary" onclick="location.href = '/board_delete/{{board.id}}'">DELETE</button>
+    </div>
+</div>
+{% endblock %}
